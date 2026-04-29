@@ -81,7 +81,13 @@ If there is no immediate need to block submission of data, even if the data is d
 
 ### Accessibility and UX best practices
 
-Especially when thinking about disabling or hiding buttons related to client side validation status, make sure you are considering accessibility and UX best practices.
+Validation should ensure a predictable, accessible experience to guide users instead of blocking them. A general rule of thumb: Don't prevent clicks; use them to provide better instructions.
+
+Be mindful when using design patterns that stray from established norms:
+
+- Disabled buttons are a red flag. They're often a dead end that forces users to hunt for errors without guidance. It’s a sign to reevaluate whether your validation flow is clear enough.
+- Avoid conditionally hiding buttons. This accessibility anti-pattern causes layout shifts for sighted users and creates confusion for screen reader users who expect predictable page structure.
+- It's almost always better to keep buttons interactive. If the form is incomplete, consider letting the user interact with the button to trigger helpful validation messages that point exactly to what needs fixing.
 
 ### Make validation seamless
 
